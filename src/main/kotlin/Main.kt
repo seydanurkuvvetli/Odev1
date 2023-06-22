@@ -1,22 +1,22 @@
 import kotlin.random.Random
 fun main() {
-    val tutulanSayi = Random.nextInt(102)
-    var tahminSayisi = 3
-    while (tahminSayisi > 0) {
+    val number = Random.nextInt(102)
+    var guessCount = 3
+    while (guessCount > 0) {
         print("Tahmininizi yapın: ")
-        val tahmin = readlnOrNull()?.toIntOrNull()
-        if (tahmin == null) {
+        val guess = readlnOrNull()?.toIntOrNull()
+        if (guess == null) {
             println("geçerli sayı gir")
-        } else if (tahmin > tutulanSayi) {
+        } else if (guess > number) {
             println("daha küçük sayı deneyin")
-        } else if (tahmin < tutulanSayi) {
+        } else if (guess < number) {
             println("daha büyük sayı deneyin")
         } else  {
             println("tebrikler")
             break
         }
-        tahminSayisi--
-        println("kalan hak $tahminSayisi")
+        guessCount--
+        println("kalan hak $guessCount")
     }
     print("hakkınız bitti")
 }
